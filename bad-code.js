@@ -15,7 +15,7 @@ function processUserInput(input) {
 function renderUserContent(userContent) {
     const el = document.getElementById('content');
     if (!el) return;
-    if (window.DOMPurify && typeof DOMPurify.sanitize === 'function') {
+    if (globalThis.DOMPurify && typeof DOMPurify.sanitize === 'function') {
         el.innerHTML = DOMPurify.sanitize(userContent);
     } else {
         el.textContent = userContent;
